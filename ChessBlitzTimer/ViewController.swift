@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var count1: Double = 301.0
-    var count2: Double = 301.0
-    var timer = Timer()
-    var switchBool: Bool = false
-    var countBool: Bool = false
+    var count1: Double = 300.0
+    var count2: Double = 300.0
+    var timer: Timer?
+    var switchBool: Bool = true
+    var goPlay: Bool = false
     @IBOutlet weak var lbltimer1: UILabel!
     @IBOutlet weak var lblTimer2: UILabel!
     @IBOutlet weak var btnPlay: UIButton!
@@ -35,29 +35,42 @@ class ViewController: UIViewController {
     }
     
     func updateTimer1(timer: Timer?){
-        if switchBool == false {
-            count1 = count1 - 1
-            let timeLeft = timeFormatter.string(from: count1)
-            lbltimer1.text = timeLeft
-        }else{
-            count2 = count2 - 1
-            let timeLeft = timeFormatter.string(from: count2)
-            lblTimer2.text = timeLeft
+        if goPlay == true {
+            if switchBool == false {
+                count1 = count1 - 1
+                let timeLeft = timeFormatter.string(from: count1)
+                lbltimer1.text = timeLeft
+            }else{
+                count2 = count2 - 1
+                let timeLeft = timeFormatter.string(from: count2)
+                lblTimer2.text = timeLeft
+            }
         }
     }
     
     @IBAction func onPressPlay(_ sender: Any) {
-        updateTimer1(timer: nil)
+        btnPlay.setTitle("Switch", for: .normal)
+        goPlay = true
         
-        if switchBool == false{
-            switchBool = true
-        }else {
+        if btnPlay.titleLabel?.text == "Switch" {
+            updateTimer1(timer: nil)
+        }
+    
+        if switchBool == true{
             switchBool = false
+        }else {
+            switchBool = true
         }
     }
 
     @IBAction func onPressReset(_ sender: Any) {
-        
+        btnPlay.setTitle("Play", for: .normal)
+        count1 = 300
+        count2 = 300
+        lbltimer1.text = "5:00"
+        lblTimer2.text = "5:00"
+        goPlay = false
+        switchBool = false
     }
 }
 

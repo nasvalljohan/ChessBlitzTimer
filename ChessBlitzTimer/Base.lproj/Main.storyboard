@@ -41,10 +41,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twz-M5-MTU">
-                                <rect key="frame" x="69.5" y="428" width="75" height="40"/>
+                                <rect key="frame" x="64.5" y="428" width="85" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eVX-tu-V9v"/>
-                                    <constraint firstAttribute="width" constant="75" id="lAE-x7-EMp"/>
+                                    <constraint firstAttribute="width" constant="85" id="lAE-x7-EMp"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play"/>
@@ -53,9 +53,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txo-Ne-hz5">
-                                <rect key="frame" x="269.5" y="428" width="75" height="40"/>
+                                <rect key="frame" x="264.5" y="428" width="85" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="EYW-n2-Hw2"/>
+                                    <constraint firstAttribute="width" constant="85" id="EYW-n2-Hw2"/>
                                     <constraint firstAttribute="height" constant="40" id="tFr-cf-kmb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
