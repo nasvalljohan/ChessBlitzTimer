@@ -25,17 +25,17 @@ class ViewController: UIViewController {
         timeFormatter.allowedUnits = [.minute, .second]
         lbltimer1.text = "5:00"
         lblTimer2.text = "5:00"
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: updateTimer(timer:))
     }
     
     func updateTimer(timer: Timer?){
         if goPlay == true {
             if switchBool == false {
-                count1 = count1 - 1
+                count1 = count1 - 0.1
                 let timeLeft = timeFormatter.string(from: count1)
                 lbltimer1.text = timeLeft
             }else{
-                count2 = count2 - 1
+                count2 = count2 - 0.1
                 let timeLeft = timeFormatter.string(from: count2)
                 lblTimer2.text = timeLeft
             }
