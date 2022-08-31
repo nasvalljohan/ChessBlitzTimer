@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     var count1: Double = 300.0
     var count2: Double = 300.0
     var timer: Timer?
@@ -20,21 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnReset: UIButton!
     var timeFormatter = DateComponentsFormatter()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
         timeFormatter.allowedUnits = [.minute, .second]
-
         lbltimer1.text = "5:00"
         lblTimer2.text = "5:00"
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer1(timer:))
-        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
     }
     
-    func updateTimer1(timer: Timer?){
+    func updateTimer(timer: Timer?){
         if goPlay == true {
             if switchBool == false {
                 count1 = count1 - 1
@@ -53,7 +47,7 @@ class ViewController: UIViewController {
         goPlay = true
         
         if btnPlay.titleLabel?.text == "Switch" {
-            updateTimer1(timer: nil)
+            updateTimer(timer: nil)
         }
     
         if switchBool == true{
@@ -73,4 +67,3 @@ class ViewController: UIViewController {
         switchBool = false
     }
 }
-
